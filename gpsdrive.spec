@@ -7,6 +7,7 @@ License:	GPL
 Vendor:		Fritz Ganter <ganter@ganter.at>
 Group:		Applications/Communications
 Source0:	http://gpsdrive.kraftvoll.at/%{name}-%{version}.tar.gz
+# Source0-md5:	24b8e3c9d94de184f1a7daaede226fa5
 BuildRequires:	gdk-pixbuf-devel
 BuildRequires:	libstdc++-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
