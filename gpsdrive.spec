@@ -1,18 +1,15 @@
-#
-#
-#
-Summary:	gpsdrive is a GPS based navigation tool
+Summary:	gpsdrive - a GPS based navigation tool
+Summary(pl):	gpsdrive - narzêdzie do nawigacji oparte o GPS
 Name:		gpsdrive
 Version:	1.32
 Release:	1
 License:	GPL
+Vendor:		Fritz Ganter <ganter@ganter.at>
 Group:		Applications/Communications
 Source0:	http://gpsdrive.kraftvoll.at/%{name}-%{version}.tar.gz
-Vendor:		Fritz Ganter <ganter@ganter.at>
-BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 BuildRequires:	gdk-pixbuf-devel
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define _prefix /usr
 %description
 Gpsdrive is a map-based navigation system. It displays your position
 on a zoomable map provided from a NMEA-capable GPS receiver. The maps
@@ -24,42 +21,50 @@ position. Speech output is also available. MySQL is supported. See
 http://gpsdrive.kraftvoll.at for new releases.
 
 %description -l pl
-Gpsdrive jest bazujacym na mapie systemem nawigacyjnym. Wy¶wietla Twoj±
-pozycje podawan± przez odbiornik GPS z obs³ug± NMEA na skalowalnej mapie.
-Mapy s± automatycznie dobierane dla uzyskania najlepszej rozdzielczo¶ci w
-zale¿no¶ci od Twojej pozycji a wy¶wietlany obraz mo¿na zbli¿aæ. Pobieraie
-map z Internetu odbywa siê jednym klikniêciem myszy.
-Program informuje o prêdko¶ci, kierunku, azymucie, czasie przybycia,
-aktualnej pozycji i pozycji punmktu docelowego. Dostepna jest tak¿e
-informacja g³osowa, wsparcie dla MySQL.
+Gpsdrive jest bazuj±cym na mapie systemem nawigacyjnym. Wy¶wietla
+pozycje podawan± przez odbiornik GPS z obs³ug± NMEA na skalowalnej
+mapie. Mapy s± automatycznie dobierane dla uzyskania najlepszej
+rozdzielczo¶ci w zale¿no¶ci od pozycji, a wy¶wietlany obraz mo¿na
+zbli¿aæ. Pobieranie map z Internetu odbywa siê jednym klikniêciem
+myszy. Program informuje o prêdko¶ci, kierunku, azymucie, czasie
+przybycia, aktualnej pozycji i pozycji punktu docelowego. Dostêpna
+jest tak¿e informacja g³osowa. Obs³ugiwany jest MySQL.
 Sprawd¼ na http://gpsdrive.kraftvoll.at czy jest nowsza wersja.
-
 
 %prep
 %setup -q
-CFLAGS="$RPM_OPT_FLAGS" ./configure --prefix=%{_prefix} --mandir=%{_mandir}
-
 
 %build
+CFLAGS="%{rpmcflags}" ./configure --prefix=%{_prefix} --mandir=%{_mandir}
+
 %{__make}
+
 %install
 rm -rf $RPM_BUILD_ROOT
-%{__make} DESTDIR=$RPM_BUILD_ROOT install-strip
+
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
+
+%find_lang %{name}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
-rm -rf %{_builddir}/%{name}-%{version}
-%files
+
+%files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc GPS-receivers INSTALL AUTHORS COPYING  TODO README LEEME LISEZMOI README.FreeBSD README.gpspoint2gspdrive FAQ.gpsdrive FAQ.gpsdrive.fr  README.SQL create.sql  NMEA.txt wp2sql README.kismet  LISEZMOI.kismet LISEZMOI.SQL
-%doc %{_mandir}/de/man1/gpsdrive.1.gz
-%doc %{_mandir}/es/man1/gpsdrive.1.gz
-%doc %{_mandir}/man1/gpsdrive.1.gz
+%doc GPS-receivers INSTALL AUTHORS COPYING  TODO README README.FreeBSD README.gpspoint2gspdrive FAQ.gpsdrive README.SQL create.sql  NMEA.txt wp2sql README.kismet
+# %lang(??)
+%doc LEEMEE
+# %lang(??)
+%doc LISEZMOI LISEZMOI.kismet LISEZMOI.SQL
+%lang(fr) FAQ.gpsdrive.fr
 
-%{_libdir}/*
 %attr(755,root,root) %{_bindir}/*
-
+%{_libdir}/*
 %dir %{_datadir}/gpsdrive
 %{_datadir}/gpsdrive/gpsdrivesplash.png
 %{_datadir}/gpsdrive/friendsicon.png
-%{_datadir}/locale/*/LC_MESSAGES/*
+
+%{_mandir}/man1/gpsdrive.1*
+%lang(de) %{_mandir}/de/man1/gpsdrive.1*
+%lang(es) %{_mandir}/es/man1/gpsdrive.1*
