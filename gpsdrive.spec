@@ -8,6 +8,7 @@ Vendor:		Fritz Ganter <ganter@ganter.at>
 Group:		Applications/Communications
 Source0:	http://gpsdrive.kraftvoll.at/%{name}-%{version}.tar.gz
 BuildRequires:	gdk-pixbuf-devel
+BuildRequires:	libstdc++-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -35,7 +36,7 @@ Sprawd¼ na http://gpsdrive.kraftvoll.at czy jest nowsza wersja.
 %setup -q
 
 %build
-CFLAGS="%{rpmcflags}" ./configure --prefix=%{_prefix} --mandir=%{_mandir}
+%configure
 
 %{__make}
 
@@ -50,17 +51,17 @@ rm -rf $RPM_BUILD_ROOT
 %clean
 rm -rf $RPM_BUILD_ROOT
 
+%post	-p /sbin/ldconfig
+%postun	-p /sbin/ldconfig
+
 %files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc GPS-receivers INSTALL AUTHORS COPYING  TODO README README.FreeBSD README.gpspoint2gspdrive FAQ.gpsdrive README.SQL create.sql  NMEA.txt wp2sql README.kismet
-# %lang(??)
-%doc LEEMEE
-# %lang(??)
-%doc LISEZMOI LISEZMOI.kismet LISEZMOI.SQL
-%lang(fr) FAQ.gpsdrive.fr
+%doc GPS-receivers AUTHORS TODO README README.gpspoint2gspdrive FAQ.gpsdrive README.SQL create.sql NMEA.txt wp2sql README.kismet
+%lang(es) %doc LEEME
+%lang(fr) %doc LISEZMOI LISEZMOI.kismet LISEZMOI.SQL FAQ.gpsdrive.fr
 
 %attr(755,root,root) %{_bindir}/*
-%{_libdir}/*
+%attr(755,root,root) %{_libdir}/lib*.so.*.*
 %dir %{_datadir}/gpsdrive
 %{_datadir}/gpsdrive/gpsdrivesplash.png
 %{_datadir}/gpsdrive/friendsicon.png
