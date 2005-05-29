@@ -1,14 +1,13 @@
 Summary:	gpsdrive - a GPS based navigation tool
 Summary(pl):	gpsdrive - narzêdzie do nawigacji oparte o GPS
 Name:		gpsdrive
-Version:	1.32
+Version:	2.09
 Release:	1
 License:	GPL
 Vendor:		Fritz Ganter <ganter@ganter.at>
 Group:		Applications/Communications
 Source0:	http://gpsdrive.kraftvoll.at/%{name}-%{version}.tar.gz
-# Source0-md5:	24b8e3c9d94de184f1a7daaede226fa5
-Patch0:		%{name}-assert.patch
+# Source0-md5:	eaa52cb220f3d10312a1046dd47126bb
 BuildRequires:	gdk-pixbuf-devel
 BuildRequires:	libstdc++-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -36,7 +35,6 @@ Sprawd¼ na http://gpsdrive.kraftvoll.at czy jest nowsza wersja.
 
 %prep
 %setup -q
-%patch0 -p1
 
 %build
 cp -f /usr/share/automake/config.sub .
@@ -60,15 +58,18 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc GPS-receivers AUTHORS TODO README README.gpspoint2gspdrive FAQ.gpsdrive README.SQL create.sql NMEA.txt wp2sql README.kismet
+%doc GPS-receivers AUTHORS TODO README README.gpspoint2gspdrive FAQ.gpsdrive README.SQL create.sql NMEA.txt wp2sql README.kismet README.nasamaps
 %lang(es) %doc LEEME
 %lang(fr) %doc LISEZMOI LISEZMOI.kismet LISEZMOI.SQL FAQ.gpsdrive.fr
 
 %attr(755,root,root) %{_bindir}/*
 %attr(755,root,root) %{_libdir}/lib*.so.*.*
 %dir %{_datadir}/gpsdrive
-%{_datadir}/gpsdrive/gpsdrivesplash.png
-%{_datadir}/gpsdrive/friendsicon.png
+%{_datadir}/gpsdrive/*.png
+%{_datadir}/gpsdrive/*.gif
+%{_datadir}/gpsdrive/*.jpg
+%{_desktopdir}/*
+%{_pixmapsdir}/*.png
 
 %{_mandir}/man1/gpsdrive.1*
 %lang(de) %{_mandir}/de/man1/gpsdrive.1*
