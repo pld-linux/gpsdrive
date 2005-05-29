@@ -1,0 +1,20 @@
+--- gpsdrive-1.32/src/garble.cpp~	2001-11-16 18:00:54.000000000 +0000
++++ gpsdrive-1.32/src/garble.cpp	2005-05-29 14:28:35.593610696 +0000
+@@ -29,6 +29,7 @@
+ #include <iostream>
+ #include <string>
+ #include <cstdlib>
++#include <cassert>
+ //  #include <ctime>
+ 
+ using namespace std;
+--- gpsdrive-1.32/src/gpsdrivegarble.cpp~	2002-11-06 05:29:15.000000000 +0000
++++ gpsdrive-1.32/src/gpsdrivegarble.cpp	2005-05-29 14:29:08.391624640 +0000
+@@ -61,6 +61,7 @@
+ #include <iostream>
+ #include <string>
+ #include <cstdlib>
++#include <cassert>
+ //  #include <ctime>
+ 
+ using namespace std;
