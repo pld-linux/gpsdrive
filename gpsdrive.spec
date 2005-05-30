@@ -9,8 +9,9 @@ Group:		Applications/Communications
 Source0:	http://gpsdrive.kraftvoll.at/%{name}-%{version}.tar.gz
 # Source0-md5:	eaa52cb220f3d10312a1046dd47126bb
 BuildRequires:	gdk-pixbuf-devel
-BuildRequires:	gtk+-devel > 2.0
+BuildRequires:	gtk+2-devel >= 1:2.0.6
 BuildRequires:	libstdc++-devel
+BuildRequires:	pkgconfig
 BuildRequires:	python-pygtk-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
