@@ -2,7 +2,7 @@ Summary:	gpsdrive - a GPS based navigation tool
 Summary(pl):	gpsdrive - narzêdzie do nawigacji oparte o GPS
 Name:		gpsdrive
 Version:	2.09
-Release:	1
+Release:	2
 License:	GPL
 Vendor:		Fritz Ganter <ganter@ganter.at>
 Group:		Applications/Communications
@@ -50,6 +50,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
+
+mv -f $RPM_BUILD_ROOT%{_datadir}/locale/{no,nb}
 
 %find_lang %{name}
 
