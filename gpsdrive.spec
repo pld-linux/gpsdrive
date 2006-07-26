@@ -8,6 +8,7 @@ Vendor:		Fritz Ganter <ganter@ganter.at>
 Group:		Applications/Communications
 Source0:	http://gpsdrive.kraftvoll.at/%{name}-%{version}.tar.gz
 # Source0-md5:	eaa52cb220f3d10312a1046dd47126bb
+URL:		http://www.gpsdrive.cc/
 BuildRequires:	gdk-pixbuf-devel
 BuildRequires:	gtk+2-devel >= 1:2.0.6
 BuildRequires:	libstdc++-devel
