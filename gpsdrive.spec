@@ -74,7 +74,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/gpsdrive/*.png
 %{_datadir}/gpsdrive/*.gif
 %{_datadir}/gpsdrive/*.jpg
-%{_desktopdir}/*
+%{_desktopdir}/*.desktop
 %{_pixmapsdir}/*.png
 
 %{_mandir}/man1/gpsdrive.1*
