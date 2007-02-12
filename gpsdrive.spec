@@ -1,5 +1,5 @@
 Summary:	gpsdrive - a GPS based navigation tool
-Summary(pl):	gpsdrive - narzêdzie do nawigacji oparte o GPS
+Summary(pl.UTF-8):   gpsdrive - narzÄ™dzie do nawigacji oparte o GPS
 Name:		gpsdrive
 Version:	2.09
 Release:	2
@@ -26,16 +26,16 @@ speed, direction, bearing, arrival time, actual position, and target
 position. Speech output is also available. MySQL is supported. See
 http://gpsdrive.kraftvoll.at for new releases.
 
-%description -l pl
-Gpsdrive jest bazuj±cym na mapie systemem nawigacyjnym. Wy¶wietla
-pozycje podawan± przez odbiornik GPS z obs³ug± NMEA na skalowalnej
-mapie. Mapy s± automatycznie dobierane dla uzyskania najlepszej
-rozdzielczo¶ci w zale¿no¶ci od pozycji, a wy¶wietlany obraz mo¿na
-zbli¿aæ. Pobieranie map z Internetu odbywa siê jednym klikniêciem
-myszy. Program informuje o prêdko¶ci, kierunku, azymucie, czasie
-przybycia, aktualnej pozycji i pozycji punktu docelowego. Dostêpna
-jest tak¿e informacja g³osowa. Obs³ugiwany jest MySQL.
-Sprawd¼ na http://gpsdrive.kraftvoll.at czy jest nowsza wersja.
+%description -l pl.UTF-8
+Gpsdrive jest bazujÄ…cym na mapie systemem nawigacyjnym. WyÅ›wietla
+pozycje podawanÄ… przez odbiornik GPS z obsÅ‚ugÄ… NMEA na skalowalnej
+mapie. Mapy sÄ… automatycznie dobierane dla uzyskania najlepszej
+rozdzielczoÅ›ci w zaleÅ¼noÅ›ci od pozycji, a wyÅ›wietlany obraz moÅ¼na
+zbliÅ¼aÄ‡. Pobieranie map z Internetu odbywa siÄ™ jednym klikniÄ™ciem
+myszy. Program informuje o prÄ™dkoÅ›ci, kierunku, azymucie, czasie
+przybycia, aktualnej pozycji i pozycji punktu docelowego. DostÄ™pna
+jest takÅ¼e informacja gÅ‚osowa. ObsÅ‚ugiwany jest MySQL.
+SprawdÅº na http://gpsdrive.kraftvoll.at czy jest nowsza wersja.
 
 %prep
 %setup -q
