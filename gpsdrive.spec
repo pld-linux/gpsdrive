@@ -1,5 +1,5 @@
 Summary:	gpsdrive - a GPS based navigation tool
-Summary(pl.UTF-8):   gpsdrive - narzędzie do nawigacji oparte o GPS
+Summary(pl.UTF-8):	gpsdrive - narzędzie do nawigacji oparte o GPS
 Name:		gpsdrive
 Version:	2.09
 Release:	2
