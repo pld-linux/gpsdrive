@@ -1,0 +1,12 @@
+mv gr el
+--- gpsdrive-2.09/configure.ac.orig	2008-03-26 13:11:54.372963972 +0100
++++ gpsdrive-2.09/configure.ac	2008-03-26 13:12:07.872036214 +0100
+@@ -10,7 +10,7 @@
+ AC_CONFIG_SRCDIR(src/gpsdrive.c)
+ AC_CONFIG_HEADER(config.h)
+ 
+-ALL_LINGUAS="de es fr it da nl tr de_AT hu sk sv no pt_BR gr ja"
++ALL_LINGUAS="de es fr it da nl tr de_AT hu sk sv no pt_BR el ja"
+ 
+ 
+ dnl ************************
